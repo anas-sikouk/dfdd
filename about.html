@@ -2,13 +2,13 @@
 <html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>À Propos | Annacer Assurance Sidi Kacem</title>
     <meta name="description" content="Découvrez l'histoire, la mission et l'équipe d'Annacer Assurance, votre partenaire AtlantaSanad à Sidi Kacem.">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{colors:{brand:{blue:'#002D62',red:'#E30613',slate:'#0F172A',gold:'#B89655',accent:'#F1F5F9',dark:'#020617'}},fontFamily:{sans:['Plus Jakarta Sans','sans-serif'],display:['Outfit','sans-serif']},borderRadius:{'4xl':'2rem','5xl':'3.5rem'},animation:{'float':'floating 3s ease-in-out infinite','pulse-slow':'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite'}}}}</script>
+    <script>tailwind.config={theme:{extend:{colors:{brand:{blue:'#002D62',red:'#E30613',slate:'#0F172A',gold:'#B89655',accent:'#F1F5F9',dark:'#020617'}},fontFamily:{sans:['Plus Jakarta Sans','sans-serif'],display:['Outfit','sans-serif']},borderRadius:{'4xl':'2rem','5xl':'3.5rem'},animation:{'float':'floating 3s ease-in-out infinite'}}}}</script>
     <style>
         :root{--primary:#002D62;--secondary:#E30613;--glass:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.1)}
         body{background-color:#020617;color:#f8fafc;overflow-x:hidden}
@@ -16,24 +16,30 @@
         .glass-dark{background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.05)}
         .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.17,0.55,0.55,1)}
         .reveal.active{opacity:1;transform:translateY(0)}
+        .nav-link{position:relative}
         .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#E30613;transition:width 0.3s ease}
         .nav-link:hover::after,.nav-link.active::after{width:100%}
         .nav-link.active{color:#fff!important}
         @keyframes floating{0%,100%{transform:translateY(0px)}50%{transform:translateY(-20px)}}
         ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#020617}::-webkit-scrollbar-thumb{background:linear-gradient(var(--primary),var(--secondary));border-radius:5px}
-        .timeline-line{position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(227,6,19,0.3);transform:translateX(-50%)}
+        .mobile-menu{position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100%;z-index:200;background:rgba(2,6,23,0.98);backdrop-filter:blur(20px);border-left:1px solid rgba(255,255,255,0.1);transition:right 0.3s ease-in-out;padding:2rem 1.5rem;display:flex;flex-direction:column;gap:2rem}
+        .mobile-menu.open{right:0}
+        .mobile-menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:199;opacity:0;visibility:hidden;transition:opacity 0.3s ease,visibility 0.3s}
+        .mobile-menu-overlay.active{opacity:1;visibility:visible}
+        .mobile-menu .nav-link{display:block;padding:0.75rem 0;font-size:1rem;font-weight:bold;text-transform:uppercase;letter-spacing:0.05em}
+        .mobile-menu .phone-btn{margin-top:auto;background:white;color:#020617;text-align:center;padding:1rem;border-radius:2rem;font-weight:900}
+        @media (min-width:1024px){.mobile-menu,.mobile-menu-overlay{display:none}}
     </style>
 </head>
 <body class="font-sans antialiased">
     <div class="fixed inset-0 pointer-events-none z-[100] opacity-[0.03]" style="background-image:url('https://grainy-gradients.vercel.app/noise.svg')"></div>
 
-    <!-- NAVIGATION -->
-    <header id="navbar" class="fixed w-full z-[90] transition-all duration-500 py-6">
-        <div class="max-w-7xl mx-auto px-6">
-            <nav class="glass rounded-3xl px-8 py-4 flex justify-between items-center border-white/5">
-                <a href="index.html" class="flex items-center space-x-4">
-                    <div class="relative w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center text-white border border-white/10"><i class="fas fa-shield-halved text-brand-red text-xl"></i></div>
-                    <div><span class="block text-xl font-black tracking-tighter uppercase leading-none">Annacer</span><span class="text-[10px] font-bold text-brand-red uppercase tracking-[0.3em]">Assurance & Conseil</span></div>
+    <header id="navbar" class="fixed w-full z-[90] transition-all duration-500 py-4 md:py-6">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <nav class="glass rounded-2xl md:rounded-3xl px-4 md:px-8 py-3 md:py-4 flex justify-between items-center border-white/5">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="relative w-10 h-10 md:w-12 md:h-12 bg-brand-dark rounded-xl flex items-center justify-center text-white border border-white/10"><i class="fas fa-shield-halved text-brand-red text-base md:text-xl"></i></div>
+                    <div><span class="block text-base md:text-xl font-black tracking-tighter uppercase leading-none">Annacer</span><span class="text-[8px] md:text-[10px] font-bold text-brand-red uppercase tracking-[0.2em] md:tracking-[0.3em]">Assurance & Conseil</span></div>
                 </a>
                 <div class="hidden lg:flex items-center space-x-10">
                     <ul class="flex space-x-8 text-[11px] font-extrabold uppercase tracking-widest">
@@ -44,58 +50,94 @@
                         <li><a href="faq.html" class="nav-link text-slate-400 hover:text-white transition-colors">FAQ</a></li>
                         <li><a href="contact.html" class="nav-link text-slate-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
-                    <a href="tel:0537595910" class="bg-white text-brand-dark px-8 py-3 rounded-2xl font-black text-xs hover:bg-brand-red hover:text-white transition-all">05 37 59 59 10</a>
+                    <a href="tel:0537595910" class="bg-white text-brand-dark px-8 py-3 rounded-2xl font-black text-xs hover:bg-brand-red hover:text-white transition-all whitespace-nowrap">05 37 59 59 10</a>
                 </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-white text-xl md:text-2xl" aria-label="Menu"><i class="fas fa-bars"></i></button>
             </nav>
         </div>
     </header>
 
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="flex justify-end"><button id="closeMobileMenu" class="text-white text-2xl"><i class="fas fa-times"></i></button></div>
+        <ul class="flex flex-col gap-2">
+            <li><a href="index.html" class="nav-link text-slate-400 hover:text-white">Accueil</a></li>
+            <li><a href="about.html" class="nav-link active text-white">À Propos</a></li>
+            <li><a href="services.html" class="nav-link text-slate-400 hover:text-white">Services</a></li>
+            <li><a href="blog.html" class="nav-link text-slate-400 hover:text-white">Blog</a></li>
+            <li><a href="faq.html" class="nav-link text-slate-400 hover:text-white">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-slate-400 hover:text-white">Contact</a></li>
+        </ul>
+        <a href="tel:0537595910" class="phone-btn">05 37 59 59 10</a>
+    </div>
+
     <!-- PAGE HEADER -->
-    <section class="pt-48 pb-20 border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-brand-red text-xs font-black uppercase tracking-[0.3em] mb-4">Qui sommes-nous</p>
-            <h1 class="text-5xl lg:text-7xl font-black font-display italic mb-6">Notre <span class="text-brand-red">Histoire</span></h1>
-            <p class="text-slate-400 max-w-2xl mx-auto text-lg">Depuis 2018, nous accompagnons les habitants de Sidi Kacem avec des solutions d'assurance innovantes et un service de proximité incomparable.</p>
+    <section class="pt-32 md:pt-48 pb-12 md:pb-20 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
+            <p class="text-brand-red text-[10px] md:text-xs font-black uppercase tracking-[0.2em] md:tracking-[0.3em] mb-4">Qui sommes-nous</p>
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-black font-display italic mb-6">Notre <span class="text-brand-red">Histoire</span></h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-base md:text-lg">Depuis 2018, nous accompagnons les habitants de Sidi Kacem avec des solutions d'assurance innovantes et un service de proximité incomparable.</p>
         </div>
     </section>
 
-    <!-- MISSION & VISION -->
-    <section class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="reveal glass p-10 rounded-[3rem] border-white/5 text-center">
-                    <div class="w-16 h-16 bg-brand-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-red/20">
-                        <i class="fas fa-bullseye text-2xl text-white"></i>
-                    </div>
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+                <div class="reveal glass p-6 md:p-10 rounded-2xl md:rounded-[3rem] border-white/5 text-center">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-red rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-red/20"><i class="fas fa-bullseye text-xl md:text-2xl text-white"></i></div>
                     <h3 class="text-xl font-black uppercase mb-4">Notre Mission</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Offrir à chaque client une protection sur mesure, alliant expertise humaine et outils digitaux de pointe pour une expérience d'assurance repensée.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Offrir à chaque client une protection sur mesure, alliant expertise humaine et outils digitaux de pointe.</p>
                 </div>
-                <div class="reveal glass p-10 rounded-[3rem] border-white/5 text-center">
-                    <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/20">
-                        <i class="fas fa-eye text-2xl text-white"></i>
-                    </div>
+                <div class="reveal glass p-6 md:p-10 rounded-2xl md:rounded-[3rem] border-white/5 text-center">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-blue rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/20"><i class="fas fa-eye text-xl md:text-2xl text-white"></i></div>
                     <h3 class="text-xl font-black uppercase mb-4">Notre Vision</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Devenir le leader incontesté de l'assurance digitale dans la région, en rendant la protection accessible, transparente et instantanée pour tous.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Devenir le leader de l'assurance digitale dans la région, rendant la protection accessible à tous.</p>
                 </div>
-                <div class="reveal glass p-10 rounded-[3rem] border-white/5 text-center">
-                    <div class="w-16 h-16 bg-brand-gold rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-gold-500/20">
-                        <i class="fas fa-handshake text-2xl text-brand-dark"></i>
-                    </div>
+                <div class="reveal glass p-6 md:p-10 rounded-2xl md:rounded-[3rem] border-white/5 text-center">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-gold rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-gold-500/20"><i class="fas fa-handshake text-xl md:text-2xl text-brand-dark"></i></div>
                     <h3 class="text-xl font-black uppercase mb-4">Nos Valeurs</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Proximité, intégrité, innovation et excellence. Ces 4 piliers guident chacune de nos actions au quotidien pour mériter votre confiance.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Proximité, intégrité, innovation et excellence. Quatre piliers pour mériter votre confiance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CHIFFRES CLÉS -->
-    <section class="py-24 bg-white/[0.02] border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-                <div class="reveal"><p class="text-5xl font-black mb-2 text-brand-red">2018</p><p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Fondation</p></div>
-                <div class="reveal"><p class="text-5xl font-black mb-2 text-white">+10 000</p><p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Clients</p></div>
-                <div class="reveal"><p class="text-5xl font-black mb-2 text-brand-gold">5</p><p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Experts</p></div>
-                <div class="reveal"><p class="text-5xl font-black mb-2 text-brand-red">1</p><p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Agence physique</p></div>
+    <section class="py-16 md:py-24 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+                <div class="reveal"><p class="text-3xl md:text-5xl font-black mb-2 text-brand-red">2018</p><p class="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Fondation</p></div>
+                <div class="reveal"><p class="text-3xl md:text-5xl font-black mb-2 text-white">+10 000</p><p class="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Clients</p></div>
+                <div class="reveal"><p class="text-3xl md:text-5xl font-black mb-2 text-brand-gold">5</p><p class="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Experts</p></div>
+                <div class="reveal"><p class="text-3xl md:text-5xl font-black mb-2 text-brand-red">1</p><p class="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Agence</p></div>
             </div>
         </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark pt-16 md:pt-32 pb-8 md:pb-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16 mb-12 md:mb-20">
+                <div class="lg:col-span-2 text-center md:text-left">
+                    <a href="index.html" class="flex items-center justify-center md:justify-start space-x-3 mb-6"><div class="w-10 h-10 md:w-12 md:h-12 bg-brand-dark rounded-xl flex items-center justify-center border border-white/10"><i class="fas fa-shield-halved text-brand-red text-base md:text-xl"></i></div><span class="text-xl md:text-2xl font-black italic uppercase text-white">Annacer</span></a>
+                    <p class="text-slate-500 max-w-sm text-xs md:text-sm mb-6 mx-auto md:mx-0">Partenaire AtlantaSanad Sidi Kacem. Expertise digitale et protection premium depuis 2018.</p>
+                </div>
+                <div class="text-center md:text-left"><h6 class="text-[10px] font-black uppercase tracking-widest text-brand-red mb-6 md:mb-8">Liens</h6><ul class="space-y-3 text-xs md:text-sm font-bold text-slate-400"><li><a href="index.html" class="hover:text-white">Accueil</a></li><li><a href="about.html" class="hover:text-white">À Propos</a></li><li><a href="services.html" class="hover:text-white">Services</a></li><li><a href="blog.html" class="hover:text-white">Blog</a></li><li><a href="faq.html" class="hover:text-white">FAQ</a></li><li><a href="contact.html" class="hover:text-white">Contact</a></li></ul></div>
+                <div class="text-center md:text-left"><h6 class="text-[10px] font-black uppercase tracking-widest text-brand-red mb-6 md:mb-8">Contact</h6><ul class="space-y-3 text-xs md:text-sm font-bold text-slate-400"><li><i class="fas fa-phone mr-2 md:mr-3 text-brand-red"></i>05 37 59 59 10</li><li><i class="fas fa-envelope mr-2 md:mr-3 text-brand-red"></i>assuranceannaceras@gmail.com</li></ul></div>
+            </div>
+            <p class="text-center text-[8px] md:text-[10px] font-black uppercase text-slate-600">&copy; 2026 Agence Annacer. Sidi Kacem. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll',()=>{const nav=document.getElementById('navbar');if(window.scrollY>100)nav.querySelector('nav').classList.add('glass-dark');else nav.querySelector('nav').classList.remove('glass-dark')});
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})},{threshold:0.1});
+        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+        const menuBtn=document.getElementById('mobile-menu-btn'),mobileMenu=document.getElementById('mobileMenu'),overlay=document.getElementById('mobileMenuOverlay'),closeBtn=document.getElementById('closeMobileMenu');
+        function openMenu(){mobileMenu.classList.add('open');overlay.classList.add('active');document.body.style.overflow='hidden'}
+        function closeMenu(){mobileMenu.classList.remove('open');overlay.classList.remove('active');document.body.style.overflow=''}
+        menuBtn.addEventListener('click',openMenu);closeBtn.addEventListener('click',closeMenu);overlay.addEventListener('click',closeMenu);
+        document.querySelectorAll('#mobileMenu a').forEach(link=>link.addEventListener('click',closeMenu));
+        window.addEventListener('load',()=>window.scrollTo(0,0));
+    </script>
+</body>
+</html>
