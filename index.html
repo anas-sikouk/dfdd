@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Annacer Assurance | Excellence Digitale & Protection 3.0 - Accueil</title>
+    <meta name="description" content="Expertise en assurance à Sidi Kacem. Partenaire AtlantaSanad. Solutions digitales avancées, devis gratuit, chatbot IA 24/7.">
+    <link rel="canonical" href="https://www.annacerassurance.ma/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Annacer Assurance | Protection 3.0 à Sidi Kacem">
+    <meta property="og:description" content="Partenaire AtlantaSanad. Expertise digitale et assurance premium.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.annacerassurance.ma/">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">(function(){emailjs.init("vk3TsCj2TbhWy2OOB");})();</script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config={theme:{extend:{colors:{brand:{blue:'#002D62',red:'#E30613',slate:'#0F172A',gold:'#B89655',accent:'#F1F5F9',dark:'#020617'}},fontFamily:{sans:['Plus Jakarta Sans','sans-serif'],display:['Outfit','sans-serif']},borderRadius:{'4xl':'2rem','5xl':'3.5rem'},animation:{'float':'floating 3s ease-in-out infinite','pulse-slow':'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite','spin-slow':'spin 8s linear infinite'}}}}
+    </script>
+    <style>
+        :root{--primary:#002D62;--secondary:#E30613;--glass:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.1)}
+        body{background-color:#020617;color:#f8fafc;overflow-x:hidden}
+        .glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border)}
+        .glass-dark{background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.05)}
+        .mesh-hero{background:radial-gradient(circle at 0% 0%, rgba(0,45,98,0.15) 0%, transparent 40%),radial-gradient(circle at 100% 100%, rgba(227,6,19,0.15) 0%, transparent 40%)}
+        .text-gradient{background:linear-gradient(135deg,#ffffff 0%,#94a3b8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        @keyframes floating{0%,100%{transform:translateY(0px)}50%{transform:translateY(-20px)}}
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.17,0.55,0.55,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+        ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#020617}::-webkit-scrollbar-thumb{background:linear-gradient(var(--primary),var(--secondary));border-radius:5px}
+        .service-card{perspective:1000px;cursor:pointer}
+        .service-inner{transition:transform 0.6s cubic-bezier(0.4,0,0.2,1),background-color 0.3s ease;transform-style:preserve-3d}
+        .service-card:hover .service-inner{transform:rotateY(10deg) rotateX(5deg)}
+        .dify-wrapper{background:#000;border-radius:2rem;overflow:hidden;border:1px solid rgba(255,255,255,0.1);box-shadow:0 25px 50px -12px rgba(227,6,19,0.15)}
+        .modal-active{display:flex!important}
+        .modal-content-active{opacity:1!important;transform:scale(1)!important}
+        .nav-link{position:relative}
+        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#E30613;transition:width 0.3s ease}
+        .nav-link:hover::after,.nav-link.active::after{width:100%}
+        .nav-link.active{color:#fff!important}
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100%;
+            z-index: 200;
+            background: rgba(2, 6, 23, 0.98);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(255,255,255,0.1);
+            transition: right 0.3s ease-in-out;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .mobile-menu.open {
+            right: 0;
+        }
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 199;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s;
+        }
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-menu .nav-link {
+            display: block;
+            padding: 0.75rem 0;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .mobile-menu .phone-btn {
+            margin-top: auto;
+            background: white;
+            color: #020617;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 2rem;
+            font-weight: 900;
+        }
+        @media (min-width: 1024px) {
+            .mobile-menu, .mobile-menu-overlay { display: none; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <div class="fixed inset-0 pointer-events-none z-[100] opacity-[0.03]" style="background-image:url('https://grainy-gradients.vercel.app/noise.svg')"></div>
+
+    <!-- ========== NAVIGATION PRINCIPALE ========== -->
+    <header id="navbar" class="fixed w-full z-[90] transition-all duration-500 py-4 md:py-6">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <nav class="glass rounded-2xl md:rounded-3xl px-4 md:px-8 py-3 md:py-4 flex justify-between items-center border-white/5">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="relative w-10 h-10 md:w-12 md:h-12 bg-brand-dark rounded-xl flex items-center justify-center text-white border border-white/10">
+                        <i class="fas fa-shield-halved text-brand-red text-base md:text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-base md:text-xl font-black tracking-tighter uppercase leading-none">Annacer</span>
+                        <span class="text-[8px] md:text-[10px] font-bold text-brand-red uppercase tracking-[0.2em] md:tracking-[0.3em]">Assurance & Conseil</span>
+                    </div>
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-10">
+                    <ul class="flex space-x-8 text-[11px] font-extrabold uppercase tracking-widest">
+                        <li><a href="index.html" class="nav-link active text-white transition-colors">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link text-slate-400 hover:text-white transition-colors">À Propos</a></li>
+                        <li><a href="services.html" class="nav-link text-slate-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="blog.html" class="nav-link text-slate-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="faq.html" class="nav-link text-slate-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="contact.html" class="nav-link text-slate-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                    <a href="tel:0537595910" class="bg-white text-brand-dark px-8 py-3 rounded-2xl font-black text-xs hover:bg-brand-red hover:text-white transition-all whitespace-nowrap">
+                        05 37 59 59 10
+                    </a>
+                </div>
+                <!-- Mobile hamburger -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white text-xl md:text-2xl" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Sidebar -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+    <div id="mobileMenu" class="mobile-menu">
+        <div class="flex justify-end">
+            <button id="closeMobileMenu" class="text-white text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col gap-2">
+            <li><a href="index.html" class="nav-link active text-white">Accueil</a></li>
+            <li><a href="about.html" class="nav-link text-slate-400">À Propos</a></li>
+            <li><a href="services.html" class="nav-link text-slate-400">Services</a></li>
+            <li><a href="blog.html" class="nav-link text-slate-400">Blog</a></li>
+            <li><a href="faq.html" class="nav-link text-slate-400">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-slate-400">Contact</a></li>
+        </ul>
+        <a href="tel:0537595910" class="phone-btn">05 37 59 59 10</a>
+    </div>
+
+    <!-- ========== HERO - RESPONSIVE ========== -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-28 md:pt-32 mesh-hero">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="reveal active text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-3 bg-brand-red/10 border border-brand-red/20 px-3 md:px-4 py-2 rounded-full mb-6 md:mb-8 mx-auto lg:mx-0 w-fit">
+                        <span class="text-[8px] md:text-[10px] font-black uppercase tracking-[0.1em] md:tracking-[0.2em] text-brand-red whitespace-nowrap">Partenaire Officiel AtlantaSanad</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black mb-6 md:mb-8 leading-[1.1] lg:leading-[0.95] font-display italic">
+                        La sécurité <br><span class="text-gradient">Redéfinie par</span><br><span class="text-brand-red not-italic">L'Intelligence.</span>
+                    </h1>
+                    <p class="text-base md:text-lg text-slate-400 mb-8 md:mb-12 max-w-lg mx-auto lg:mx-0 leading-relaxed">À Sidi Kacem, découvrez une gestion proactive et digitale pour chaque étape de votre vie. Devis gratuit en 2 minutes.</p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#ai-chat" class="px-6 md:px-10 py-3 md:py-5 bg-white text-brand-dark rounded-2xl md:rounded-[2rem] font-black uppercase tracking-widest text-xs hover:scale-105 transition-transform">Parler à l'IA</a>
+                        <a href="rdv.html" class="px-6 md:px-10 py-3 md:py-5 glass text-white rounded-2xl md:rounded-[2rem] font-black uppercase tracking-widest text-xs hover:bg-white/10 transition-all">Prendre RDV</a>
+                        <a href="services.html" class="px-6 md:px-10 py-3 md:py-5 border border-brand-red/40 text-brand-red rounded-2xl md:rounded-[2rem] font-black uppercase tracking-widest text-xs hover:bg-brand-red hover:text-white transition-all">Nos Services</a>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center reveal active mt-8 lg:mt-0">
+                    <div class="relative w-full max-w-xs md:max-w-md animate-float">
+                        <div class="relative glass rounded-3xl md:rounded-5xl p-6 md:p-10 border-white/10 z-10 shadow-2xl">
+                            <div class="w-12 h-8 md:w-16 md:h-10 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-lg mb-10 md:mb-16 shadow-inner"></div>
+                            <p class="text-[8px] md:text-[10px] text-slate-500 font-bold uppercase mb-1 md:mb-2">Titulaire du contrat</p>
+                            <p class="text-lg md:text-2xl font-bold tracking-tight italic uppercase">Client Premium</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STATS - RESPONSIVE ========== -->
+    <section class="py-12 md:py-20 border-y border-white/5 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center">
+                <div class="reveal"><p class="text-3xl md:text-5xl font-black mb-2 text-brand-red">+8 ans</p><p class="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">D'Expérience</p></div>
+                <div class="reveal"><p class="text-3xl md:text-5xl font-black mb-2 text-white">+10&nbsp;000</p><p class="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Assurés</p></div>
+                <div class="reveal"><p class="text-3xl md:text-5xl font-black mb-2 text-brand-gold">99%</p><p class="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Satisfaction</p></div>
+                <div class="reveal"><p class="text-3xl md:text-5xl font-black mb-2 text-white">24/7</p><p class="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Support IA</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOLUTIONS - RESPONSIVE (1 column on mobile) ========== -->
+    <section id="solutions" class="py-16 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="mb-12 md:mb-24 reveal flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                <h3 class="text-3xl md:text-5xl font-black font-display italic">Des solutions <br><span class="text-brand-red italic">sur-mesure.</span></h3>
+                <a href="services.html" class="text-brand-red text-xs font-bold uppercase tracking-widest hover:text-white transition-colors">Voir tous les services <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Auto -->
+                <div class="service-card reveal" onclick="openSolutionModal('auto')">
+                    <div class="service-inner h-full glass p-6 md:p-10 rounded-2xl md:rounded-[3rem] border-white/5 hover:border-brand-red/50 hover:bg-white/5 transition-all group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-red rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-10 group-hover:rotate-12 transition-transform shadow-lg shadow-brand-red/20">
+                            <i class="fas fa-car-side text-xl md:text-2xl text-white"></i></div>
+                        <h4 class="text-xl md:text-2xl font-black mb-4 md:mb-6 italic uppercase flex items-center justify-between">Automobile <i class="fas fa-arrow-right text-sm text-brand-red opacity-0 group-hover:opacity-100 transition-opacity"></i></h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Tarifs préférentiels AtlantaSanad avec une assistance 0km à Sidi Kacem.</p>
+                    </div>
+                </div>
+                <!-- Santé -->
+                <div class="service-card reveal" onclick="openSolutionModal('sante')">
+                    <div class="service-inner h-full bg-gradient-to-br from-brand-blue to-brand-dark p-6 md:p-10 rounded-2xl md:rounded-[3rem] border border-white/10 hover:border-blue-400/50 group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-10 text-brand-blue shadow-lg shadow-blue-500/20">
+                            <i class="fas fa-heart-pulse text-xl md:text-2xl"></i></div>
+                        <h4 class="text-xl md:text-2xl font-black mb-4 md:mb-6 italic uppercase flex items-center justify-between">Santé <i class="fas fa-arrow-right text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity"></i></h4>
+                        <p class="text-sm text-blue-100/60 leading-relaxed">Une protection optimale pour vous et vos proches.</p>
+                    </div>
+                </div>
+                <!-- Habitation -->
+                <div class="service-card reveal" onclick="openSolutionModal('habitation')">
+                    <div class="service-inner h-full glass p-6 md:p-10 rounded-2xl md:rounded-[3rem] border-white/5 hover:border-brand-gold/50 hover:bg-white/5 transition-all group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-slate-800 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-10 group-hover:-rotate-12 transition-transform shadow-lg shadow-gold-500/20">
+                            <i class="fas fa-house-chimney text-xl md:text-2xl text-brand-gold"></i></div>
+                        <h4 class="text-xl md:text-2xl font-black mb-4 md:mb-6 italic uppercase flex items-center justify-between">Habitation <i class="fas fa-arrow-right text-sm text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity"></i></h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Protégez votre patrimoine immobilier contre tous les aléas.</p>
+                    </div>
+                </div>
+                <!-- Barid Cash -->
+                <div class="service-card reveal" onclick="openSolutionModal('barid')">
+                    <div class="service-inner h-full glass p-6 md:p-10 rounded-2xl md:rounded-[3rem] border-white/5 hover:border-brand-gold/50 hover:bg-white/5 transition-all group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-gold rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-10 shadow-lg shadow-gold-500/20">
+                            <i class="fas fa-money-bill-transfer text-xl md:text-2xl text-brand-dark"></i></div>
+                        <h4 class="text-xl md:text-2xl font-black mb-4 md:mb-6 italic uppercase flex items-center justify-between">Barid Cash <i class="fas fa-arrow-right text-sm text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity"></i></h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Transfert d'argent et paiements de factures simplifiés.</p>
+                    </div>
+                </div>
+                <!-- Voyage -->
+                <div class="service-card reveal" onclick="openSolutionModal('voyage')">
+                    <div class="service-inner h-full glass p-6 md:p-10 rounded-2xl md:rounded-[3rem] border-white/5 hover:border-brand-red/50 hover:bg-white/5 transition-all group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-red/20 border border-brand-red/30 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-10">
+                            <i class="fas fa-plane-departure text-xl md:text-2xl text-brand-red"></i></div>
+                        <h4 class="text-xl md:text-2xl font-black mb-4 md:mb-6 italic uppercase flex items-center justify-between">Voyage <i class="fas fa-arrow-right text-sm text-brand-red opacity-0 group-hover:opacity-100 transition-opacity"></i></h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Assistance internationale et Visa Schengen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MODAL SOLUTIONS (unchanged but responsive) ========== -->
+    <div id="solutionModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 transition-opacity duration-300">
+        <div id="modalContent" class="glass-dark border border-white/10 rounded-2xl md:rounded-[3rem] p-5 md:p-12 max-w-2xl w-full relative transform scale-95 opacity-0 transition-all duration-300 shadow-2xl overflow-y-auto max-h-[90vh]">
+            <button onclick="closeSolutionModal()" class="absolute top-4 right-4 md:top-6 md:right-6 w-8 h-8 md:w-10 md:h-10 bg-white/5 rounded-full flex items-center justify-center text-white/50 hover:text-white hover:bg-brand-red transition-all"><i class="fas fa-times text-sm md:text-lg"></i></button>
+            <div id="modalBody" class="mt-2 md:mt-4"></div>
+        </div>
+    </div>
+
+    <!-- ========== AI CHATBOT - RESPONSIVE ========== -->
+    <section id="ai-chat" class="py-16 md:py-32 bg-brand-dark/50">
+        <div class="max-w-5xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-10 md:mb-16 reveal">
+                <h3 class="text-3xl md:text-5xl font-black italic mb-4 md:mb-6">Expertise IA <span class="text-brand-red">Directe</span></h3>
+                <p class="text-sm md:text-base text-slate-400 max-w-2xl mx-auto">Notre assistant virtuel est disponible 24h/24 et 7j/7 pour répondre à toutes vos questions sur nos produits d'assurance.</p>
+            </div>
+            <div class="reveal dify-wrapper">
+                <iframe src="https://udify.app/chatbot/35syslfztSPCwkD4" style="width:100%; height:450px; min-height:auto;" frameborder="0" allow="microphone"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER - RESPONSIVE ========== -->
+    <footer class="bg-brand-dark pt-16 md:pt-32 pb-8 md:pb-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16 mb-12 md:mb-20">
+                <div class="lg:col-span-2 text-center md:text-left">
+                    <a href="index.html" class="flex items-center justify-center md:justify-start space-x-3 mb-6">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-dark rounded-xl flex items-center justify-center border border-white/10">
+                            <i class="fas fa-shield-halved text-brand-red text-base md:text-xl"></i>
+                        </div>
+                        <span class="text-xl md:text-2xl font-black italic tracking-tighter uppercase text-white">Annacer</span>
+                    </a>
+                    <p class="text-slate-500 max-w-sm text-xs md:text-sm mb-6 mx-auto md:mx-0">Partenaire AtlantaSanad Sidi Kacem. Expertise digitale et protection premium depuis 2018.</p>
+                    <div class="flex gap-4 justify-center md:justify-start">
+                        <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-white/5 rounded-full flex items-center justify-center text-slate-400 hover:bg-brand-red hover:text-white transition-all"><i class="fab fa-facebook-f text-sm md:text-base"></i></a>
+                        <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-white/5 rounded-full flex items-center justify-center text-slate-400 hover:bg-brand-red hover:text-white transition-all"><i class="fab fa-instagram text-sm md:text-base"></i></a>
+                        <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-white/5 rounded-full flex items-center justify-center text-slate-400 hover:bg-brand-red hover:text-white transition-all"><i class="fab fa-linkedin-in text-sm md:text-base"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h6 class="text-[10px] font-black uppercase tracking-widest text-brand-red mb-6 md:mb-8">Liens rapides</h6>
+                    <ul class="space-y-3 text-xs md:text-sm font-bold text-slate-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">À Propos</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h6 class="text-[10px] font-black uppercase tracking-widest text-brand-red mb-6 md:mb-8">Contact</h6>
+                    <ul class="space-y-3 text-xs md:text-sm font-bold text-slate-400">
+                        <li><i class="fas fa-phone mr-2 md:mr-3 text-brand-red"></i> 05 37 59 59 10</li>
+                        <li><i class="fas fa-envelope mr-2 md:mr-3 text-brand-red"></i> assuranceannaceras@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 md:mr-3 text-brand-red"></i> Sidi Kacem, Maroc</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[8px] md:text-[10px] font-black uppercase text-slate-600">&copy; 2026 Agence Annacer. Sidi Kacem. Tous droits réservés.</p>
+                <div class="flex gap-4 md:gap-6 text-[8px] md:text-[10px] font-bold uppercase text-slate-600">
+                    <a href="#" class="hover:text-white transition-colors">Mentions légales</a>
+                    <a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // NAVBAR SCROLL
+        window.addEventListener('scroll',()=>{const nav=document.getElementById('navbar');if(window.scrollY>100)nav.querySelector('nav').classList.add('glass-dark');else nav.querySelector('nav').classList.remove('glass-dark')});
+        // REVEAL ANIMATIONS
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('active')})},{threshold:0.1});
+        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+        // SOLUTIONS DATA
+        const solutionsData={
+            auto:{title:"Assurance Automobile",icon:"fa-car-side",color:"text-brand-red",bgIcon:"bg-brand-red",garanties:["Responsabilité Civile Obligatoire","Assistance 0km & Remorquage","Garantie Dommages Collisions","Bris de Glaces (Sans franchise sous conditions)","Protection du Conducteur et des Passagers","Vol et Incendie"],promoTitle:"Offre AtlantaSanad Auto",promoText:"Bénéficiez de remises allant jusqu'à 20% pour les conducteurs expérimentés et d'une prise en charge rapide en cas de sinistre."},
+            sante:{title:"Assurance Santé",icon:"fa-heart-pulse",color:"text-blue-400",bgIcon:"bg-blue-500",garanties:["Remboursement des frais médicaux & pharmaceutiques","Prise en charge hospitalisation à 100%","Frais de Maternité","Soins dentaires et optiques inclus","Accès à un large réseau de cliniques conventionnées"],promoTitle:"Protection Famille",promoText:"Souscrivez pour toute votre famille et profitez de réductions exclusives sur les cotisations pour vos enfants."},
+            habitation:{title:"Assurance Habitation",icon:"fa-house-chimney",color:"text-brand-gold",bgIcon:"bg-brand-gold",garanties:["Incendie, Explosion et Risques annexes","Dégâts des eaux","Vol et Vandalisme","Bris de glaces","Responsabilité Civile Vie Privée"],promoTitle:"Pack Multirisques",promoText:"Sécurisez votre foyer dès aujourd'hui. Tarifs préférentiels pour les nouveaux propriétaires à Sidi Kacem."},
+            barid:{title:"Barid Cash",icon:"fa-money-bill-transfer",color:"text-brand-gold",bgIcon:"bg-brand-gold",garanties:["Transfert d'argent National (Mandat Express)","Transfert d'argent International (Western Union, MoneyGram)","Paiement de factures (Eau, Électricité, Télécom)","Paiement des taxes et impôts","Recharge téléphonique"],promoTitle:"Service de proximité",promoText:"Des transactions instantanées et sécurisées avec une assistance personnalisée au sein de notre agence."},
+            voyage:{title:"Assurance Voyage",icon:"fa-plane-departure",color:"text-brand-red",bgIcon:"bg-brand-red",garanties:["Frais médicaux et d'hospitalisation à l'étranger","Rapatriement sanitaire","Retour anticipé","Perte ou vol de bagages","Assistance juridique à l'étranger"],promoTitle:"Validité Visa Schengen",promoText:"Notre assurance voyage est 100% conforme aux exigences des consulats pour l'obtention du Visa Schengen."}
+        };
+        const modal=document.getElementById('solutionModal'),modalContent=document.getElementById('modalContent'),modalBody=document.getElementById('modalBody');
+        function openSolutionModal(type){
+            const data=solutionsData[type];if(!data)return;
+            modalBody.innerHTML=`<div class="flex items-center gap-4 md:gap-6 mb-6 md:mb-8 flex-wrap"><div class="w-12 h-12 md:w-16 md:h-16 ${data.bgIcon} rounded-2xl flex items-center justify-center shadow-lg"><i class="fas ${data.icon} text-xl md:text-2xl text-white"></i></div><h3 class="text-xl md:text-3xl font-black italic uppercase">${data.title}</h3></div><div class="grid md:grid-cols-2 gap-6 md:gap-8"><div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-4 md:p-6"><h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-4 md:mb-6">Nos Garanties</h4><ul>${data.garanties.map(g=>`<li class="flex items-start gap-2 md:gap-3 mb-2 md:mb-3 text-slate-300"><i class="fas fa-check-circle mt-1 text-xs md:text-sm ${data.color}"></i><span class="text-xs md:text-sm">${g}</span></li>`).join('')}</ul></div><div class="bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 rounded-2xl md:rounded-3xl p-4 md:p-6"><h4 class="text-xs font-black uppercase tracking-widest text-brand-red mb-3 md:mb-4">Promotions</h4><p class="font-bold text-base md:text-lg mb-2">${data.promoTitle}</p><p class="text-xs md:text-sm text-slate-400 leading-relaxed mb-6 md:mb-8">${data.promoText}</p><button onclick="closeSolutionModal();window.location.href='rdv.html'" class="w-full bg-white text-brand-dark py-2 md:py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-brand-red hover:text-white transition-colors">Demander un devis</button></div></div>`;
+            modal.classList.remove('hidden');setTimeout(()=>{modal.classList.add('modal-active','opacity-100');modalContent.classList.add('modal-content-active')},10);document.body.style.overflow='hidden'
+        }
+        function closeSolutionModal(){modal.classList.remove('opacity-100');modalContent.classList.remove('modal-content-active');setTimeout(()=>{modal.classList.add('hidden');modal.classList.remove('modal-active');document.body.style.overflow='auto'},300)}
+        modal.addEventListener('click',(e)=>{if(e.target===modal)closeSolutionModal()});
+
+        // MOBILE MENU
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('mobileMenuOverlay');
+        const closeBtn = document.getElementById('closeMobileMenu');
+
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        mobileMenuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+        document.querySelectorAll('#mobileMenu a').forEach(link => link.addEventListener('click', closeMenu));
+
+        // FIX SCROLL TO TOP
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+            if (window.location.hash === '#ai-chat') {
+                history.replaceState(null, null, window.location.pathname);
+            }
+        });
+        document.querySelector('iframe')?.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+</html>
